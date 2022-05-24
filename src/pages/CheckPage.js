@@ -1,4 +1,5 @@
 import Nav from "../components/Nav";
+import ProveraDostupnosti from "../components/ProveraDostupnosti";
 
 
 function CheckPage() {
@@ -14,6 +15,7 @@ function CheckPage() {
     return (
         <div>
             <Nav />
+            <ProveraDostupnosti />
         </div>
     );
 }
