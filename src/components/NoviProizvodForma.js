@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SpisakProizvoda from './SpisakProizvoda';
 
 function NoviProizvodForma() {
 
@@ -8,22 +9,29 @@ function NoviProizvodForma() {
         cena: '',
     });
 
+    const [spisak, setSpisak] = useState([]);
+
     function handleNaziv(e) {
-        setProizvod({ ...proizvod, naziv: e.value })
+        setProizvod({ ...proizvod, naziv: e.target.value })
     }
 
     function handleSifra(e) {
-        setProizvod({ ...proizvod, sifra: e.value })
+        setProizvod({ ...proizvod, sifra: e.target.value })
     }
 
     function handleCena(e) {
-        setProizvod({ ...proizvod, cena: e.value })
+        setProizvod({ ...proizvod, cena: e.target.value })
+    }
+
+    function dodajUSpisak(e) {
+        e.preventDefault();
+        setSpisak(spisak => [...spisak, proizvod]);
     }
 
 
     return (
         <div>
-            <form className="add">
+            <form onSubmit={dodajUSpisak} className="add">
                 <div className="field">
                     <label>Naziv: </label>
                     <input type="text" className="form-control" value={proizvod.naziv} onChange={handleNaziv} />
@@ -38,6 +46,9 @@ function NoviProizvodForma() {
                 </div>
                 <button type="submit" className="btn btn-primary" id='btn_add'>Dodaj</button>
             </form>
+
+            <SpisakProizvoda spisak={spisak} />
+
         </div>
     );
 }
