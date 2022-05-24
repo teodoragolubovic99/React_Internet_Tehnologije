@@ -47,6 +47,7 @@ nav {
   font-size: 22px;
   color: white;
   text-decoration: none;
+  margin-right: 1%;
 }
 
 .add {
@@ -73,4 +74,18 @@ nav {
 
 #spisak-naslov {
   margin-top: 2%;
+}
+
+#check {
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  margin-right: 1%;
+}
+
+#input-check {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  width: 20%;
+  margin-left: 40%;
 }

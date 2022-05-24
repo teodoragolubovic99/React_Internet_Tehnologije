@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage';
+import CheckPage from './pages/CheckPage';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='check' element={<CheckPage />} />
         </Routes>
       </Router >
     </div>
