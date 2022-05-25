@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function ProveraDostupnosti() {
+function ProveraDostupnosti(props) {
 
     const [sifraProizvoda, setSifraProizvoda] = useState('');
 
@@ -11,7 +11,7 @@ function ProveraDostupnosti() {
     return (
         <div>
             <input type="text" className="form-control" id='input-check' value={sifraProizvoda} onChange={handleSifraProizvoda} placeholder='Unesite šifru proizvoda...' />
-            <button type="button" className="btn btn-primary">Proveri dostupnost</button>
+            <button type="button" onClick={() => props.dostupnost(sifraProizvoda)} className="btn btn-primary">Proveri dostupnost</button>
         </div>
     )
 }

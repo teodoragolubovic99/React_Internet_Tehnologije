@@ -12,10 +12,24 @@ function CheckPage() {
         { naziv: 'Prada Naočare', sifra: 'PRADA333', cena: 25000, prodavnice: 'BIG, USCE, WEST65' },
     ];
 
+    function proveriDostupnost(sifra) {
+        var dostupan = false;
+        proizvodi.forEach(proizvod => {
+            if (proizvod.sifra.toLowerCase() === sifra.toLowerCase()) {
+                alert("Proizvod je dostupan u: " + proizvod.prodavnice + ".")
+                dostupan = true;
+            }
+        });
+        if (!dostupan) {
+            alert("Trazeni proizvod nije dostupan!")
+        }
+    }
+
+
     return (
         <div>
             <Nav />
-            <ProveraDostupnosti />
+            <ProveraDostupnosti dostupnost={proveriDostupnost} />
         </div>
     );
 }
